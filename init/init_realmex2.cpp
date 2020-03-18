@@ -49,12 +49,6 @@ void load_CN() {
     property_set("ro.build.product", "RMX1991");
 }
 
-void load_IN() {
-    property_set("ro.product.device", "RMX1991");
-    property_set("ro.product.name", "RMX1991");
-    property_set("ro.build.product", "RMX1991");
-}
-
 void load_EU() {
     property_set("ro.product.device", "RMX1993");
     property_set("ro.product.name", "RMX1993");
@@ -79,7 +73,7 @@ void vendor_load_properties() {
 			}
 			else
 			{
-				load_IN();
+				load_CN();
 				break;
 			}
 		}
