@@ -71,16 +71,16 @@ void vendor_load_properties() {
 		{
 			if (line.substr(17, 7) == "4218880") {
 				load_CN();
-                break;
+				break;
 			}
 			else if (line.substr(17, 7) == "5557452") {
 				load_EU();
-                break;
+				break;
 			}
 			else
 			{
 				load_IN();
-                break;
+				break;
 			}
 		}
 	}
