@@ -47,12 +47,14 @@ void load_CN() {
     property_set("ro.product.device", "RMX1991CN");
     property_set("ro.product.name", "RMX1991");
     property_set("ro.build.product", "RMX1991");
+    property_set("ro.separate.soft", "19671");
 }
 
 void load_EU() {
     property_set("ro.product.device", "RMX1993");
     property_set("ro.product.name", "RMX1993");
     property_set("ro.build.product", "RMX1993");
+    property_set("ro.separate.soft", "19672");
 }
 
 void vendor_load_properties() {
