@@ -43,6 +43,10 @@ using namespace std;
 namespace android {
 namespace init {
 
+static bool file_exist (const std::string& name) {
+    return ( access( name.c_str(), F_OK ) == 0 );
+}
+
 void load_CN() {
     property_set("ro.product.device", "RMX1991CN");
     property_set("ro.product.name", "RMX1991");
@@ -55,6 +59,13 @@ void load_EU() {
     property_set("ro.product.name", "RMX1993");
     property_set("ro.build.product", "RMX1993");
     property_set("ro.separate.soft", "19672");
+}
+
+void load_IN() {
+    property_set("ro.product.device", "RMX1992");
+    property_set("ro.product.name", "RMX1992");
+    property_set("ro.build.product", "RMX1992");
+    property_set("ro.separate.soft", "19671");
 }
 
 void vendor_load_properties() {
@@ -70,8 +81,23 @@ void vendor_load_properties() {
 				break;
 			}
 			else if (line.substr(17, 7) == "5557452") {
-				load_EU();
-				break;
+                const char* pathnfc = "/proc/touchpanel/NFC_CHECK";
+                if (file_exist(pathnfc)){
+                    std::ifstream infilenfc(pathnfc);
+                    std::string linenfc;
+                    std::getline(infilenfc, linenfc);
+                    if(linenfc.compare("SUPPORTED") == 0){
+                        load_EU();
+                        break;
+                    } else {
+                        load_IN();
+                        break;
+                    }
+
+                } else {
+				    load_EU();
+				    break;
+                }
 			}
 			else
 			{
