@@ -93,6 +93,7 @@ service keymaster-4-0 /sbin/android.hardware.keymaster@4.0-service-qti
 
 on boot
     setprop sys.usb.config adb
+    write /sys/class/power_supply/usb/otg_switch 1
 
 on property:crypto.ready=0
     stop sbinqseecomd
