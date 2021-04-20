@@ -5,7 +5,7 @@
 #
 
 # Release name
-PRODUCT_RELEASE_NAME := RMX1992
+PRODUCT_RELEASE_NAME := X2
 
 $(call inherit-product, build/target/product/embedded.mk)
 
