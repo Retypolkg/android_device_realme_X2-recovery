@@ -13,10 +13,10 @@ $(call inherit-product, build/target/product/embedded.mk)
 $(call inherit-product, vendor/omni/config/common.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := omni_x2
-PRODUCT_DEVICE := x2
+PRODUCT_NAME := omni_X2
+PRODUCT_DEVICE := X2
 PRODUCT_BRAND := realme
-PRODUCT_MODEL := realme x2
+PRODUCT_MODEL := realme X2
 PRODUCT_MANUFACTURER := realme
 
 # HACK: Set vendor patch level
