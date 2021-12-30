@@ -15,10 +15,10 @@
 #
 
 # Release name
-PRODUCT_RELEASE_NAME := RMX1991
-DEVICE_PATH := device/realme/RMX1991
+PRODUCT_RELEASE_NAME := X2
+DEVICE_PATH := device/realme/X2
 
-$(call inherit-product, device/realme/RMX1991/device.mk)
+$(call inherit-product, device/realme/X2/device.mk)
 
 # Inherit from common AOSP config
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
@@ -27,9 +27,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := RMX1991
-PRODUCT_NAME := twrp_RMX1991
+PRODUCT_DEVICE := X2
+PRODUCT_NAME := twrp_X2
 PRODUCT_BRAND := Realme
 PRODUCT_MODEL := Realme X2
 PRODUCT_MANUFACTURER := Realme
-#
