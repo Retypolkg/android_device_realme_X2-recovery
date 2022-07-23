@@ -5,8 +5,8 @@
 #TODO: Add 'check' as fs_mgr_flags with data partition.
 # Currently we dont have e2fsck compiled. So fs check would failed.
 #Rui.Tuo@BSP.Fingerprint.Secure, 2020/01/13, change the initial permission of vendor/firmware_mnt
-#<src>                                 <mnt_point>  <type>  <mnt_flags and options>                                        <fs_mgr_flags>
+#<src>                                                  <mnt_point>   <type>  <mnt_flags and options>                                        <fs_mgr_flags>
 
-/dev/block/by-name/cache                /cache       ext4   nosuid,noatime,nodev,barrier=1                                  wait,check,first_stage_mount
-/dev/block/bootdevice/by-name/userdata  /data        ext4   noatime,nosuid,nodev,discard,reserve_root=32768,resgid=1065,fsync_mode=nobarrier,inlinecrypt     latemount,wait,resize,check,formattable,fileencryption=ice,wrappedkey,quota,reservedsize=128M
-/dev/block/bootdevice/by-name/misc      /misc        emmc   defaults                                                        defaults
+/dev/block/bootdevice/by-name/cache                     /cache        ext4    nosuid,noatime,nodev,barrier=1,async_discard                   wait
+/dev/block/bootdevice/by-name/userdata                  /data         ext4    noatime,nosuid,noatime,nodev,barrier=1,noauto_da_alloc,lazytime,errors=panic,inlinecrypt,async_discard     latemount,wait,resize,check,fileencryption=ice,quota,reservedsize=128M
+/dev/block/bootdevice/by-name/misc                      /misc         emmc    defaults                                                       defaults
