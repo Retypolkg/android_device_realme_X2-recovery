@@ -9,7 +9,7 @@ load_RMX1991()
     echo "Chinese variant detected - using RMX1991 props"
 }
  
-load_RMX1992()
+load_RMX1992ex()
 {
     resetprop "ro.product.name" "RMX1992"
     resetprop "ro.build.product" "RMX1992"
@@ -17,9 +17,20 @@ load_RMX1992()
     resetprop "ro.commonsoft.ota" "RMX1992"
     resetprop "ro.separate.soft" "19671"
     resetprop "ro.build.date.utc" "1640000000"
-    echo "Indian variant detected - using RMX1992 props"
+    echo "Indian variant detected - using RMX1992ex props"
 }
- 
+
+load_RMX1992aex()
+{
+    resetprop "ro.product.name" "RMX1992"
+    resetprop "ro.build.product" "RMX1992"
+    resetprop "ro.product.device" "RMX1992L1"
+    resetprop "ro.commonsoft.ota" "RMX1992"
+    resetprop "ro.separate.soft" "19670"
+    resetprop "ro.build.date.utc" "1640000000"
+    echo "Indian variant detected - using RMX1992aex props"
+}
+
 load_RMX1993()
 {
     resetprop "ro.product.name" "RMX1993"
@@ -36,7 +47,8 @@ echo $project
  
 case $project in
     "8") load_RMX1991 ;;
-    "31") load_RMX1992 ;;
+    "31") load_RMX1992ex ;;
+    "13") load_RMX1992aex ;;
     *) load_RMX1993 ;;
 esac
  
